@@ -1,40 +1,69 @@
 import {useEffect, useState} from "react";
 
 function UsersDB() {
-  const [cards, setCards] = useState();
-  const [errors, setErrors] = useState();
+  // const initialVal = {
+  //   path: 'card',
+  //   method: 'POST',
+  //   body: { name: 'sdasds', email: 'sfascsac' }
+  // }
+  // const [cards, setCards] = useState();
+  // const [errors, setErrors] = useState();
+  const [count, setCounter] = useState(0);
+  // const [fetcher, setFetcher] = useState(initialVal);
+  // const [formName, setFormName] = useState('');
+  // const [formEmail, setFormEmail] = useState('');
   useEffect(() => {
     fetch('https://kanbanexpress1-adpol95.b4a.run/card',
-      // {
-      //   method: "GET", // *GET, POST, PUT, DELETE, etc.
-      //   mode: "same-origin", // no-cors, *cors, same-origin
-      //   cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      //   credentials: "same-origin", // include, *same-origin, omit
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     // 'Content-Type': 'application/x-www-form-urlencoded',
-      //   },
-      //   redirect: "follow", // manual, *follow, error
-      //   referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      //   body: undefined // body data type must match "Content-Type" header
-      // }
+      {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify({ name: 'Test2', email: 'test2@mail.ru' }), // body data type must match "Content-Type
+        // header
+      }
     )
       .then((res) => res.json())
       .then(
         (result) => {
-          setCards(result.map(el => <li key={Math.floor(Math.random() * 100) + 1 + ''}>{el.name}</li>))
-        },
-        (errors) => {
-          setErrors(errors)
+          console.log(result);
+          // setCards(result.map(el => <li key={Math.floor(Math.random() * 100) + 1 + ''}>{el.name}</li>))
         })
 
   }, [])
   return (
     <div className="fetch-get">
-      {errors}
-      <ul>
-      {cards}
-      </ul>
+      {/*<ul>*/}
+      {/*{cards}*/}
+      {/*</ul>*/}
+      <button className="fetch-get__btn fetch-get__btn--minus" onClick={() => setCounter(count - 1)}> Minus </button>
+      {count}
+      <button className="fetch-get__btn fetch-get__btn--plus" onClick={() => setCounter(count + 1)}> Plus </button>
+      <hr/>
+      {/*<form >*/}
+      {/*  <label>*/}
+      {/*    <input*/}
+      {/*      type="text"*/}
+      {/*      value={formName}*/}
+      {/*      onChange={(event) => setFormName(event.target.value)}*/}
+      {/*      placeholder={"Type your name"}*/}
+      {/*    />*/}
+      {/*  </label>*/}
+      {/*  <hr/>*/}
+      {/*  <label>*/}
+      {/*    <input*/}
+      {/*      type="text"*/}
+      {/*      value={formEmail}*/}
+      {/*      onChange={(event) => setFormEmail(event.target.value)}*/}
+      {/*      placeholder={"Type your email"}*/}
+      {/*    />*/}
+      {/*  </label>*/}
+      {/*  <hr/>*/}
+      {/*  <button onClick={() => {*/}
+      {/*    setFetcher({...fetcher, method: 'POST', body: JSON.stringify({ name: formName, email: formEmail })})*/}
+      {/*  }}>Add new user</button>*/}
+      {/*</form>*/}
     </div>
   )
 }
