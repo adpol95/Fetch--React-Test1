@@ -1,9 +1,10 @@
-FROM node:14
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY src .
-RUN npm run build
+FROM node:latest
+
+RUN makdir /root/app
+WORKDIR /root/app
+#COPY package*.json ./
+COPY . /root/app/
 RUN npm install -g serve
-EXPOSE 5000
-CMD ["serve", "-s", "build", "-l", "5000"]
+#RUN npm run build
+EXPOSE 3000
+CMD serve -s build
