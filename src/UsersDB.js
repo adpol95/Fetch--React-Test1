@@ -14,7 +14,7 @@ function UsersDB() {
   // const [formEmail, setFormEmail] = useState('');
 
   useEffect(() => {
-    fetch('https://kanbanexpress1-adpol95.b4a.run:5000/card'
+    fetch('https://kanbanexpress1-adpol95.b4a.run/card'
       // {
       //   method: 'POST', // *GET, POST, PUT, DELETE, etc.
       //   body: JSON.stringify({name: 'Test2', email: 'test2@mail.ru'}), // body data type must match "Content-Type
