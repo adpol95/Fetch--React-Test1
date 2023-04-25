@@ -12,17 +12,17 @@ function UsersDB() {
   // const [fetcher, setFetcher] = useState(initialVal);
   // const [formName, setFormName] = useState('');
   // const [formEmail, setFormEmail] = useState('');
+
   useEffect(() => {
-    fetch('https://kanbanexpress1-adpol95.b4a.run/card',
-      {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify({ name: 'Test2', email: 'test2@mail.ru' }), // body data type must match "Content-Type
-        // header
-      }
+    fetch('https://kanbanexpress1-adpol95.b4a.run:5000/card'
+      // {
+      //   method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      //   body: JSON.stringify({name: 'Test2', email: 'test2@mail.ru'}), // body data type must match "Content-Type
+      //   headers: {
+      //     'Content-type': 'application/json',
+      //   },
+      //   // header
+      // }
     )
       .then((res) => res.json())
       .then(
@@ -37,9 +37,9 @@ function UsersDB() {
       {/*<ul>*/}
       {/*{cards}*/}
       {/*</ul>*/}
-      <button className="fetch-get__btn fetch-get__btn--minus" onClick={() => setCounter(count - 1)}> Minus </button>
+      <button className="fetch-get__btn fetch-get__btn--minus" onClick={() => setCounter(count - 1)}> Minus</button>
       {count}
-      <button className="fetch-get__btn fetch-get__btn--plus" onClick={() => setCounter(count + 1)}> Plus </button>
+      <button className="fetch-get__btn fetch-get__btn--plus" onClick={() => setCounter(count + 1)}> Plus</button>
       <hr/>
       {/*<form >*/}
       {/*  <label>*/}
