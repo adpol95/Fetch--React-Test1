@@ -8,18 +8,18 @@ function UsersDB() {
   const [formEmail, setFormEmail] = useState('');
 
   useEffect(() => {
-    fetch('https://kanbanexpress1-adpol95.b4a.run/card')
+    fetch('https://kanbanserver-adpol95.b4a.run/card')
       .then((res) => res.json())
       .then(
         (result) => {
           setCards(result.map(el => <li key={Math.floor(Math.random() * 100000) + 1 + ''}>
             <div>
-              Name: {' '}
-              {el.name}
+              Login: {' '}
+              {el.login}
             </div>
             <div>
-              Email: {' '}
-              {el.email}
+              Password: {' '}
+              {el.password.replace(/./gi, '*')}
             </div>
             <hr/>
           </li>))
@@ -32,7 +32,7 @@ function UsersDB() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('https://kanbanexpress1-adpol95.b4a.run/card', {
+    fetch('https://kanbanserver-adpol95.b4a.run/card', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
