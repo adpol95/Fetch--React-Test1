@@ -18,36 +18,41 @@ function Register() {
     })
       .then(() => {
         setCongrats('Congrats! Your profile is created! In next 7 seconds you will return to the login page')
-        setTimeout(() => navigate('/'),7000)
+        setTimeout(() => navigate('/'), 7000)
       })
       .catch((err) => alert(err))
   }
 
   return (
-    <div>
-      <h1>Add your profile data</h1>
+    <div className="to-do-list">
+      <h2>Add your profile data</h2>
       <form onSubmit={submiter}>
         <div>
           <label>
-            Login
             <input
               type="text"
               value={newLogin}
               onChange={(event) => setNewLogin(event.target.value)}
+              className="to-do-list__input-area"
+              placeholder="Login"
             />
           </label>
         </div>
         <div>
           <label>
-            Password
             <input
               type="text"
               value={newPassword}
               onChange={(event) => setNewPassword(event.target.value)}
+              className="to-do-list__input-area"
+              placeholder="Password"
             />
           </label>
         </div>
-        <button type="submit">Create profile</button>
+        <button type="submit"
+                className="to-do-list__btn to-do-list__btn--input">
+          Create profile
+        </button>
       </form>
       <h2>{congrats}</h2>
     </div>

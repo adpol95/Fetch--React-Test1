@@ -28,34 +28,45 @@ function Login() {
 
 
   return (
-    <div className="login">
+    <div className="to-do-list">
+      <h2>Sign in</h2>
       <form onSubmit={submiter}>
         <div>
           <label>
-            User name
             <input
               type="text"
               value={loginIn}
               onChange={(event) => setLoginIn(event.target.value)}
+              className="to-do-list__input-area"
+              placeholder="User name"
             />
           </label>
         </div>
         <div>
           <label>
-            Password
             <input
               type="text"
               value={passwordIn}
               onChange={(event) => setPasswordIn(event.target.value)}
+              className="to-do-list__input-area"
+              placeholder="Password"
             />
           </label>
         </div>
-        <button type="submit">Submit</button>
-        <p>Don't have an account? <span onClick={(event) => {
-          event.preventDefault();
-          navigate('/login')
-        }
-        }>Register!</span></p>
+        <button
+          type="submit"
+          className="to-do-list__btn to-do-list__btn--input">
+          Submit
+        </button>
+        <p>Don't have an account?
+          <span className="to-do-list__register"
+                onClick={(event) => {
+                  event.preventDefault();
+                  navigate('/login')
+                }}>
+            Register!
+          </span>
+        </p>
       </form>
     </div>
   )
