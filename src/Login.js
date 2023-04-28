@@ -58,8 +58,8 @@ function Login() {
           className="to-do-list__btn to-do-list__btn--input">
           Submit
         </button>
-        <p>Don't have an account?
-          <span className="to-do-list__register"
+        <p>Don't have an account? <br/>
+           <span className="to-do-list__register"
                 onClick={(event) => {
                   event.preventDefault();
                   navigate('/login')
