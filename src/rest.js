@@ -1,10 +1,11 @@
 function rest(mth, bdy, idPatch) {
-  return fetch('https://kanbanserver-adpol95.b4a.run/card', {
+  const url = idPatch ? 'https://kanbanserver-adpol95.b4a.run/card/' + idPatch : 'https://kanbanserver-adpol95.b4a.run/card'
+  return fetch(url, {
     method: mth,
     headers: {
       'Content-Type': 'application/json'
     },
-    body: bdy
+    body: JSON.stringify(bdy)
   }).then((res) => res.json()).catch((err) => alert(err));
 }
 
