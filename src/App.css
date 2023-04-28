@@ -14,7 +14,7 @@ body {
     background: #D96846;
     display: flex;
     justify-content: center;
-    padding-top: 8rem;
+    padding: 8rem 0;
 }
 
 /*@media (max-height: 1920px) {*/
