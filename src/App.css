@@ -3,6 +3,7 @@
 html {
     font-size: 28px;
 }
+
 @media (max-width: 750px) {
     html {
         font-size: 22px;
@@ -13,7 +14,14 @@ body {
     background: #D96846;
     display: flex;
     justify-content: center;
+    padding-top: 8rem;
 }
+
+/*@media (max-height: 1920px) {*/
+/*    body {*/
+/*        height: 100%;*/
+/*    }*/
+/*}*/
 
 button,
 input,
@@ -82,6 +90,7 @@ body {
     padding: 0.5em;
 
 }
+
 .to-do-list__unordered-list {
     margin: 0;
 }
@@ -130,6 +139,7 @@ body {
     color: #596235;
     cursor: pointer;
 }
+
 .to-do-list__register:hover {
     color: #2F3020;
 }
