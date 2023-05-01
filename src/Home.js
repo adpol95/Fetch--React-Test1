@@ -77,8 +77,10 @@ function Home() {
                 key={el.id} onClick={(event) => deleteOrDone(event)}>
               <p
                 className={el.status ? "to-do-list__item-text to-do-list__item-text--active" : "to-do-list__item-text"}>{el.task}</p>
-              <button id={el.id} className="to-do-list__btn to-do-list__btn--done">Done</button>
-              <button id={el.id} className="to-do-list__btn to-do-list__btn--del">X</button>
+              <div className="to-do-list__item-btns">
+                <button id={el.id} className="to-do-list__btn to-do-list__btn--done">Done</button>
+                <button id={el.id} className="to-do-list__btn to-do-list__btn--del">X</button>
+              </div>
             </li>
           )}
         </ul>
