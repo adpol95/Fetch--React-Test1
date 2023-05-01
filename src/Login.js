@@ -45,7 +45,7 @@ function Login() {
         <div>
           <label>
             <input
-              type="text"
+              type="password"
               value={passwordIn}
               onChange={(event) => setPasswordIn(event.target.value)}
               className="to-do-list__input-area"

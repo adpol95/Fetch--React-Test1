@@ -6,6 +6,7 @@ function Home() {
   const [profile, setProfile] = useState(JSON.parse(localStorage.getItem('User')));
   const [toDo, setToDo] = useState(profile.list);
   const [taskAdd, setTaskAdd] = useState(false);
+  const [typeOfList, setTypeOfList] = useState(false);
   const [date, setDate] = useState(new Date());
 
 
@@ -83,6 +84,7 @@ function Home() {
           )}
         </ul>
       </div>
+      <button onClick={() => setTypeOfList(!typeOfList)}>Change type of list</button>
     </section>
   )
 }
