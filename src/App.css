@@ -96,7 +96,8 @@ body {
 }
 
 .to-do-list__item-text--active {
-    text-decoration: line-through #D96846;
+    text-decoration: line-through;
+    text-decoration-color: #D96846;
 }
 
 .to-do-list__item-text {
