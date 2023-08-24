@@ -10,12 +10,13 @@ function Login() {
   const [workIndex, setWorkIndex] = useState(-1);
 
   useEffect(() => {
+    rest('GET').then(res => console.log('Request sent')).catch(err => console.log(err))
     if (workIndex > -1) {
       localStorage.setItem('User', JSON.stringify(user[workIndex]))
     } else {
-      rest('GET')
+      setTimeout(1000, rest('GET')
         .then(res => setUser(res))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)));
     }
   }, [workIndex])
   const submiter = (event) => {

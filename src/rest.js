@@ -1,5 +1,6 @@
 function rest(mth, bdy, idPatch) {
-  const url = `https://kanbanserverv2-adpol95.b4a.run/card${idPatch ? '/' + idPatch : ''}`
+  const url = `https://kanbanserverv2-adpol95.b4a.run/card${idPatch ? '/' + idPatch : ''}`;
+  // const url = `http://localhost:5000/card${idPatch ? '/' + idPatch : ''}`;
   return fetch(url, {
     method: mth,
     headers: {
