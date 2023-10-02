@@ -1,12 +1,28 @@
-FROM node:14
+# Stage 1: Build the React application
+FROM node:18 as build
+
 WORKDIR /app
+
 COPY package*.json ./
-RUN npm ci
+
+RUN npm install
+
 COPY . .
+
 RUN npm run build
-RUN npm install -g serve
-EXPOSE 5000
-CMD ["serve", "-s", "build", "-l", "5000"]
+
+# Stage 2: Serve the React application using Nginx
+FROM nginx:stable-alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Copy the default nginx.conf provided by the docker image
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+
 
 
 #FROM node:16-alpine AS builder
