@@ -9,7 +9,7 @@ RUN npm update
 
 RUN npm install
 
-COPY . .
+COPY .
 
 RUN npm run build
 
